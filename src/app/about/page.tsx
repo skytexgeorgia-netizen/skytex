@@ -19,7 +19,7 @@ export default function AboutPage() {
 
       {/* Factory Images Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
           <Image
             src="/factory/factory-1.jpg"
             alt="Skytex Georgia Factory"
@@ -30,8 +30,11 @@ export default function AboutPage() {
               e.currentTarget.style.display = 'none';
             }}
           />
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
+            <p className="text-slate-600 text-sm">Fabrika Görseli 1</p>
+          </div>
         </div>
-        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
           <Image
             src="/factory/factory-2.jpg"
             alt="Barudan Embroidery Machines"
@@ -42,6 +45,9 @@ export default function AboutPage() {
               e.currentTarget.style.display = 'none';
             }}
           />
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
+            <p className="text-slate-600 text-sm">Fabrika Görseli 2</p>
+          </div>
         </div>
       </div>
 

@@ -96,7 +96,7 @@ export default function PortfolioPage() {
           {machineImages.map((src, i) => (
             <div
               key={i}
-              className="relative aspect-video rounded-xl overflow-hidden bg-slate-100 shadow-md hover:shadow-lg transition-shadow group"
+              className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-slate-200 to-slate-300 shadow-md hover:shadow-lg transition-shadow group"
             >
               <Image
                 src={src}
@@ -108,6 +108,9 @@ export default function PortfolioPage() {
                   e.currentTarget.style.display = 'none';
                 }}
               />
+              <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
+                <p className="text-slate-600 text-sm">Makine Görseli {i + 1}</p>
+              </div>
             </div>
           ))}
         </div>

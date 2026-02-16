@@ -24,7 +24,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
               <Image
                 src="/logo/skytex-logo.png"
                 alt="Skytex Georgia Logo"
@@ -37,6 +37,10 @@ export default function Header() {
                   e.currentTarget.style.display = 'none';
                 }}
               />
+              {/* Fallback logo placeholder */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-xs">
+                ST
+              </div>
             </div>
             <span className="text-xl font-bold text-slate-800 tracking-tight">
               Skytex <span className="text-amber-600">Georgia</span>

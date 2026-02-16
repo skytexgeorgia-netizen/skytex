@@ -29,8 +29,7 @@ export default function HomePage() {
         </div>
         
         {/* Fallback gradient if no image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-amber-50 -z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.1),transparent_50%)] -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 -z-10" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="text-center max-w-3xl mx-auto">
