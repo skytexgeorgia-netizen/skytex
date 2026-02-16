@@ -21,16 +21,22 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
           <Image
-            src="/factory/factory-1.jpg"
+            src="/factory/IMG_5563.jpg"
             alt="Skytex Georgia Factory"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
             onError={(e) => {
-              e.currentTarget.style.display = 'none';
+              // Try alternative factory image names
+              const img = e.currentTarget as HTMLImageElement;
+              if (img.src.includes('IMG_5563')) {
+                img.src = '/factory/factory-1.jpg';
+              } else {
+                img.style.display = 'none';
+              }
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10 opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
             <p className="text-slate-600 text-sm">Fabrika Görseli 1</p>
           </div>
         </div>
@@ -45,7 +51,7 @@ export default function AboutPage() {
               e.currentTarget.style.display = 'none';
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10 opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
             <p className="text-slate-600 text-sm">Fabrika Görseli 2</p>
           </div>
         </div>

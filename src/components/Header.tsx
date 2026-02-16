@@ -26,19 +26,24 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
               <Image
-                src="/logo/skytex-logo.png"
+                src="/logo/IMG_6291.PNG"
                 alt="Skytex Georgia Logo"
                 width={48}
                 height={48}
                 className="object-contain"
                 priority
                 onError={(e) => {
-                  // Fallback to text if logo not found
-                  e.currentTarget.style.display = 'none';
+                  // Try alternative logo names
+                  const img = e.currentTarget as HTMLImageElement;
+                  if (img.src.includes('IMG_6291')) {
+                    img.src = '/logo/skytex-logo.png';
+                  } else {
+                    img.style.display = 'none';
+                  }
                 }}
               />
               {/* Fallback logo placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-xs">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-xs opacity-0 hover:opacity-100 transition-opacity">
                 ST
               </div>
             </div>

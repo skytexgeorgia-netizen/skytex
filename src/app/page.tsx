@@ -14,15 +14,20 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/factory/hero-banner.jpg"
+            src="/logo/skytex_hero_banner_option2 (1).png"
             alt="Skytex Georgia Factory"
             fill
             className="object-cover"
             priority
             sizes="100vw"
             onError={(e) => {
-              // Fallback to gradient if image not found
-              e.currentTarget.style.display = 'none';
+              // Try alternative banner names
+              const img = e.currentTarget as HTMLImageElement;
+              if (img.src.includes('skytex_hero_banner')) {
+                img.src = '/factory/hero-banner.jpg';
+              } else {
+                img.style.display = 'none';
+              }
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/60 to-amber-900/50" />
