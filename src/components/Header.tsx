@@ -24,16 +24,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center overflow-hidden rounded-xl">
               <Image
                 src="/logo/IMG_6291.PNG"
                 alt="Skytex Georgia Logo"
                 width={48}
                 height={48}
-                className="object-contain"
+                className="object-contain rounded-xl"
                 priority
                 onError={(e) => {
-                  // Try alternative logo names
                   const img = e.currentTarget as HTMLImageElement;
                   if (img.src.includes('IMG_6291')) {
                     img.src = '/logo/skytex-logo.png';
@@ -42,13 +41,9 @@ export default function Header() {
                   }
                 }}
               />
-              {/* Fallback logo placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-xs opacity-0 hover:opacity-100 transition-opacity">
-                ST
-              </div>
             </div>
             <span className="text-xl font-bold text-slate-800 tracking-tight">
-              Skytex <span className="text-amber-600">Georgia</span>
+              Skytex <span className="text-sky-600">Georgia</span>
             </span>
           </Link>
 
@@ -59,7 +54,7 @@ export default function Header() {
                 href={item.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "text-amber-600 bg-amber-50"
+                    ? "text-sky-600 bg-sky-50"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                 }`}
               >
@@ -133,7 +128,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium ${
                     pathname === item.href
-                      ? "text-amber-600 bg-amber-50"
+                      ? "text-sky-600 bg-sky-50"
                       : "text-slate-600 hover:bg-slate-50"
                   }`}
                 >

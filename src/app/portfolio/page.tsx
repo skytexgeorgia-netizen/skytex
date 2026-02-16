@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
+import SockCard from "@/components/SockCard";
 
 const embroideryImages = [
   "/portfolio/embroidery/embroidery-1.png",
@@ -12,22 +13,6 @@ const embroideryImages = [
   "/portfolio/embroidery/embroidery-6.png",
   "/portfolio/embroidery/embroidery-7.png",
   "/portfolio/embroidery/embroidery-8.png",
-];
-
-const sockImages = [
-  "/portfolio/socks/sock-1.png",
-  "/portfolio/socks/sock-2.png",
-  "/portfolio/socks/sock-3.png",
-  "/portfolio/socks/sock-4.png",
-  "/portfolio/socks/sock-5.png",
-  "/portfolio/socks/sock-6.png",
-];
-
-const machineImages = [
-  "/factory/machine-1.jpg",
-  "/factory/machine-2.jpg",
-  "/factory/machine-3.jpg",
-  "/factory/machine-4.jpg",
 ];
 
 export default function PortfolioPage() {
@@ -70,48 +55,18 @@ export default function PortfolioPage() {
         <h2 className="text-2xl font-bold text-slate-800 mb-8">
           {t.portfolio.socks}
         </h2>
+        <p className="text-slate-600 mb-6 max-w-2xl">
+          {language === "tr"
+            ? "Skytex logosu nakışlı çoraplarımız — lacivert, beyaz, kırmızı, mavi, siyah ve gri."
+            : "Our socks with embroidered Skytex logo — navy, white, red, blue, black and grey."}
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {sockImages.map((src, i) => (
-            <div
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <SockCard
               key={i}
-              className="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:shadow-lg transition-shadow group"
-            >
-              <Image
-                src={src}
-                alt={`${t.portfolio.socks} ${i + 1}`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold text-slate-800 mb-8">
-          {t.portfolio.production}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {machineImages.map((src, i) => (
-            <div
-              key={i}
-              className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-slate-200 to-slate-300 shadow-md hover:shadow-lg transition-shadow group"
-            >
-              <Image
-                src={src}
-                alt={`Production Facility ${i + 1}`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-slate-200/80 z-10">
-                <p className="text-slate-600 text-sm">Makine Görseli {i + 1}</p>
-              </div>
-            </div>
+              imageIndex={i}
+              alt={`${t.portfolio.socks} ${i + 1}`}
+            />
           ))}
         </div>
       </section>

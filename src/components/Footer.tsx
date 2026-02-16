@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:info@skytexgeorgia.com"
-              className="text-sm text-amber-400 hover:text-amber-300 mt-2 block"
+              className="text-sm text-sky-400 hover:text-sky-300 mt-2 block"
             >
               {t.footer.email}
             </a>
@@ -42,7 +42,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/skytexgeorgia/"
+                href="https://www.facebook.com/p/Skytex-Georgia-100082385193683/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -61,7 +61,7 @@ export default function Footer() {
             </h3>
             <Link
               href="/contact"
-              className="text-sm text-amber-400 hover:text-amber-300"
+              className="text-sm text-sky-400 hover:text-sky-300"
             >
               {t.contact.subtitle}
             </Link>

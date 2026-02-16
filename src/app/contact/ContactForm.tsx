@@ -49,7 +49,7 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition"
           placeholder={t.contact.name}
         />
       </div>
@@ -63,7 +63,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition"
           placeholder={t.contact.email}
         />
       </div>
@@ -76,7 +76,7 @@ export default function ContactForm() {
           type="tel"
           id="phone"
           name="phone"
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition"
           placeholder={t.contact.phone}
         />
       </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
           type="text"
           id="subject"
           name="subject"
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition"
           placeholder={t.contact.subject}
         />
       </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={4}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition resize-none"
           placeholder={t.contact.message}
         />
       </div>
@@ -123,7 +123,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full py-4 px-6 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
+        className="w-full py-4 px-6 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
       >
         {status === "loading" ? "..." : t.contact.send}
       </button>

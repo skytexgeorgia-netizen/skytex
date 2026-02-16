@@ -10,28 +10,28 @@ const partners = [
   { id: "lotto", nameKey: "lotto" as const, image: "/partners/lotto.svg" },
   { id: "underarmour", nameKey: "underarmour" as const, image: "/partners/underarmour.svg" },
   { id: "newbalance", nameKey: "newbalance" as const, image: "/partners/newbalance.svg" },
-];
+] as const;
 
 function PartnerCard({
   partner,
   name,
 }: {
-  partner: (typeof partners)[0];
+  partner: (typeof partners)[number];
   name: string;
 }) {
   return (
-    <div className="group flex flex-col items-center justify-center p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-amber-200 transition-all min-h-[200px]">
-      <div className="relative w-32 h-20 flex items-center justify-center">
+    <div className="group flex flex-col items-center justify-center p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-sky-200 transition-all min-h-[200px]">
+      <div className="relative w-36 h-24 flex items-center justify-center">
         <Image
           src={partner.image}
           alt={name}
-          width={128}
-          height={80}
-          className="object-contain max-h-20"
+          width={144}
+          height={96}
+          className="object-contain w-full h-full"
           unoptimized
         />
       </div>
-      <p className="mt-4 text-sm font-semibold text-slate-600 group-hover:text-amber-600 transition-colors">
+      <p className="mt-4 text-sm font-semibold text-slate-600 group-hover:text-sky-600 transition-colors">
         {name}
       </p>
     </div>
@@ -62,9 +62,6 @@ export default function PartnersPage() {
         ))}
       </div>
 
-      <p className="mt-12 text-center text-sm text-slate-500">
-        Gerçek logo dosyalarınızı (PNG) /public/partners/ klasörüne ekleyerek mevcut placeholder&apos;ları değiştirebilirsiniz.
-      </p>
     </div>
   );
 }
