@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HomePage() {
@@ -8,26 +9,47 @@ export default function HomePage() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-amber-50" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.1),transparent_50%)]" />
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[600px] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/factory/hero-banner.jpg"
+            alt="Skytex Georgia Factory"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            onError={(e) => {
+              // Fallback to gradient if image not found
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/60 to-amber-900/50" />
+        </div>
+        
+        {/* Fallback gradient if no image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-amber-50 -z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.1),transparent_50%)] -z-10" />
 
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight">
-            {t.home.title}
-          </h1>
-          <p className="mt-4 text-xl md:text-2xl text-amber-600 font-medium">
-            {t.home.subtitle}
-          </p>
-          <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            {t.home.description}
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-lg shadow-amber-500/25"
-          >
-            {t.home.cta}
-          </Link>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight drop-shadow-lg">
+              {t.home.title}
+            </h1>
+            <p className="mt-4 text-xl md:text-2xl text-amber-300 font-medium drop-shadow-md">
+              {t.home.subtitle}
+            </p>
+            <p className="mt-6 text-lg text-slate-100 leading-relaxed drop-shadow-md">
+              {t.home.description}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-lg shadow-amber-500/25"
+            >
+              {t.home.cta}
+            </Link>
+          </div>
         </div>
       </section>
 

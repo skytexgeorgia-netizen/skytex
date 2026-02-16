@@ -38,6 +38,7 @@ export const translations = {
       subtitle: "Nakış ve çorap ürünlerimizden örnekler",
       embroidery: "Nakış Örnekleri",
       socks: "Çorap Koleksiyonu",
+      production: "Üretim Tesisleri",
     },
     contact: {
       title: "İletişim",
@@ -101,6 +102,7 @@ export const translations = {
       subtitle: "Samples from our embroidery and sock products",
       embroidery: "Embroidery Samples",
       socks: "Sock Collection",
+      production: "Production Facilities",
     },
     contact: {
       title: "Contact",

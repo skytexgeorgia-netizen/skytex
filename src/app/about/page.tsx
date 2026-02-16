@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutPage() {
@@ -14,6 +15,34 @@ export default function AboutPage() {
         <p className="mt-6 text-lg text-slate-600 leading-relaxed">
           {t.about.description}
         </p>
+      </div>
+
+      {/* Factory Images Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src="/factory/factory-1.jpg"
+            alt="Skytex Georgia Factory"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
+        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src="/factory/factory-2.jpg"
+            alt="Barudan Embroidery Machines"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">

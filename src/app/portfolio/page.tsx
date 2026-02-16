@@ -23,8 +23,15 @@ const sockImages = [
   "/portfolio/socks/sock-6.png",
 ];
 
+const machineImages = [
+  "/factory/machine-1.jpg",
+  "/factory/machine-2.jpg",
+  "/factory/machine-3.jpg",
+  "/factory/machine-4.jpg",
+];
+
 export default function PortfolioPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -59,7 +66,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-20">
         <h2 className="text-2xl font-bold text-slate-800 mb-8">
           {t.portfolio.socks}
         </h2>
@@ -75,6 +82,31 @@ export default function PortfolioPage() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="(max-width: 768px) 50vw, 33vw"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold text-slate-800 mb-8">
+          {t.portfolio.production}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {machineImages.map((src, i) => (
+            <div
+              key={i}
+              className="relative aspect-video rounded-xl overflow-hidden bg-slate-100 shadow-md hover:shadow-lg transition-shadow group"
+            >
+              <Image
+                src={src}
+                alt={`Production Facility ${i + 1}`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
             </div>
           ))}
